@@ -1,3 +1,8 @@
+# Foundation for Game Jam!
+
+We will be using this template to start out with our game!
+- Lucas
+
 # Tower Defense Game Template in Godot
 
 Welcome to the Tower Defense Game Template for Godot! This project is designed to jumpstart the development of tower defense games by providing a fully functional base, including demo turrets, maps, and enemies. It also offers an easy-to-extend system, allowing you to add new turrets, maps, and enemies with minimal effort.
