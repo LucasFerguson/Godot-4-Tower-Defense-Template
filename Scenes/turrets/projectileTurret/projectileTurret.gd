@@ -1,6 +1,6 @@
 extends Turret
 
-var bulletSpeed := 200.0
+var bulletSpeed := 700.0
 var bulletPierce := 1
 
 func attack():
