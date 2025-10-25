@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://duvsvsvu8biwm"]
+[gd_scene load_steps=7 format=3 uid="uid://duvsvsvu8biwm"]
 
 [ext_resource type="Script" uid="uid://bxc2ungqdsuhd" path="res://Scenes/ui/mainMenu/main_menu.gd" id="1_lnqmy"]
 [ext_resource type="Texture2D" uid="uid://didi8ffqykvkh" path="res://Assets/menu/bg.png" id="2_jl1fa"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_eooxo"]
 file = "res://videos/IntroVideo.ogv"
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_a18o6"]
+file = "res://videos/Scene2.ogv"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -65,6 +68,13 @@ layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 stream = SubResource("VideoStreamTheora_eooxo")
+expand = true
+
+[node name="VideoStreamPlayer2" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stream = SubResource("VideoStreamTheora_a18o6")
 expand = true
 
 [connection signal="button_down" from="MenuButtons/VBoxContainer/startButton" to="." method="_on_start_button_button_down"]
