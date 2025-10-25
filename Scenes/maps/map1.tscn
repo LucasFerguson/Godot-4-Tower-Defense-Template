@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ceo44f3u14hlm"]
+[gd_scene load_steps=6 format=3 uid="uid://ceo44f3u14hlm"]
 
 [ext_resource type="Script" uid="uid://b8o0s1bs1kk61" path="res://Scenes/maps/baseMap.gd" id="1_k8s62"]
-[ext_resource type="Texture2D" uid="uid://b8725vkgyjjo8" path="res://Assets/maps/map1.webp" id="1_p0w4w"]
 [ext_resource type="Script" uid="uid://drk14s21pw61f" path="res://Scenes/maps/EnemySpawner.gd" id="2_351sa"]
+[ext_resource type="Texture2D" uid="uid://b2o3jou6emeou" path="res://Assets/maps/map1.png" id="2_sb70v"]
+[ext_resource type="Texture2D" uid="uid://db8n16w3qbcnr" path="res://Assets/maps/MapOverlay.png" id="4_0ksuw"]
 
 [sub_resource type="Curve2D" id="Curve2D_bs0b4"]
 _data = {
@@ -13,9 +14,10 @@ point_count = 13
 [node name="TestMap" type="Node2D"]
 script = ExtResource("1_k8s62")
 
-[node name="Background" type="Sprite2D" parent="."]
-scale = Vector2(1.4, 1.4)
-texture = ExtResource("1_p0w4w")
+[node name="Map1" type="Sprite2D" parent="."]
+position = Vector2(1.8313236, -0.49998856)
+scale = Vector2(0.37250006, 0.3725)
+texture = ExtResource("2_sb70v")
 
 [node name="PathSpawner" type="Path2D" parent="."]
 curve = SubResource("Curve2D_bs0b4")
@@ -40,6 +42,11 @@ collision_mask = 2
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Obstacles"]
 polygon = PackedVector2Array(-580, -84, -230, -83, -222, -250, 11, -252, 21, -202, 19, -50, -35, -32, -166, -34, -168, -79, -36, -85, -31, -211, -171, -211, -170, -80, -166, -33, -166, 32, 106, 28, 130, -141, 322, -145, 309, 177, -20, 193, -39, 372, -104, 372, -82, 151, 256, 138, 265, -89, 192, -93, 166, 71, -168, 87, -168, 201, -222, 252, -383, 247, -420, 191, -418, 59, -361, 34, -235, 38, -232, 87, -356, 84, -357, 207, -234, 203, -232, -34, -579, -35)
+
+[node name="MapOverlay" type="Sprite2D" parent="."]
+position = Vector2(-89.18564, -45.249966)
+scale = Vector2(0.31638366, 0.32925)
+texture = ExtResource("4_0ksuw")
 
 [connection signal="timeout" from="PathSpawner/SpawnDelay" to="PathSpawner" method="_on_spawn_delay_timeout"]
 [connection signal="timeout" from="PathSpawner/WaveDelayTimer" to="PathSpawner" method="_on_wave_delay_timer_timeout"]
