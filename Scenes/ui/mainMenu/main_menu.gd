@@ -2,6 +2,9 @@ extends Control
 
 @onready var v1: VideoStreamPlayer = $VideoStreamPlayer
 @onready var v2: VideoStreamPlayer = $VideoStreamPlayer2
+@onready var spray_bug_button: Button = $SprayBugButton
+@onready var select_map_container: PanelContainer = $SelectMapContainer
+
 
 var v1_holding_last := false
 
@@ -34,13 +37,14 @@ func _unhandled_input(e: InputEvent) -> void:
 	if v1_holding_last and ((e is InputEventMouseButton and e.pressed) or e.is_action_pressed("ui_accept")):
 		_play_v2()
 
-func _on_VideoStreamPlayer_finished() -> void:
-	# connect v1.finished → this in the editor
+func _on_video_stream_player_finished() -> void:
+	print("video 1 done _on_video_stream_player_finished")
 	var length: float = v1.get_stream_length()
 	v1.paused = true
 	if length > 0.0:
 		v1.stream_position = max(length - 0.001, 0.0)
 	v1_holding_last = true
+	spray_bug_button.visible = true
 
 func _play_v2() -> void:
 	v1.visible = false
@@ -58,3 +62,18 @@ func _play_v2() -> void:
 	v.paused = false
 	v.stream_position = 0.0
 	v.play()
+
+func _on_spray_bug_button_pressed() -> void:
+	#	start video 2
+	print("Spray Bug")
+	spray_bug_button.visible = false
+	_play_v2()
+	
+var mapSelectContainer : PanelContainer
+
+func _on_video_stream_player_2_finished() -> void:
+	if not mapSelectContainer:
+		var mscScene := preload("res://Scenes/ui/mainMenu/select_map_container.tscn")
+		var msc := mscScene.instantiate()
+		mapSelectContainer = msc
+		add_child(msc)
