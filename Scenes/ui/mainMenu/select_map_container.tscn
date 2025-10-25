@@ -1,8 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://i2phf2rir44j"]
 
-[ext_resource type="Script" path="res://Scenes/ui/mainMenu/select_map_container.gd" id="1_32sip"]
+[ext_resource type="Script" uid="uid://04je6jnrxu" path="res://Scenes/ui/mainMenu/select_map_container.gd" id="1_32sip"]
 
 [node name="SelectMapContainer" type="PanelContainer"]
+z_index = 11
 custom_minimum_size = Vector2(250, 300)
 anchors_preset = 8
 anchor_left = 0.5

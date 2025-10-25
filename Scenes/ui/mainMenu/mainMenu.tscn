@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://duvsvsvu8biwm"]
+[gd_scene load_steps=6 format=3 uid="uid://duvsvsvu8biwm"]
 
 [ext_resource type="Script" uid="uid://bxc2ungqdsuhd" path="res://Scenes/ui/mainMenu/main_menu.gd" id="1_lnqmy"]
 [ext_resource type="Texture2D" uid="uid://didi8ffqykvkh" path="res://Assets/menu/bg.png" id="2_jl1fa"]
 [ext_resource type="Script" uid="uid://dglob68oy08eo" path="res://Scenes/ui/mainMenu/start_button.gd" id="3_ir5vu"]
 [ext_resource type="Script" uid="uid://daoavp61t0y3x" path="res://Scenes/ui/mainMenu/quit_button.gd" id="4_eooxo"]
+
+[sub_resource type="VideoStreamTheora" id="VideoStreamTheora_eooxo"]
+file = "res://videos/RickRoll.ogv"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -54,5 +57,16 @@ size_flags_vertical = 3
 text = "Quit"
 script = ExtResource("4_eooxo")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 322)
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 360.0
+stream = SubResource("VideoStreamTheora_eooxo")
+
+[connection signal="button_down" from="MenuButtons/VBoxContainer/startButton" to="." method="_on_start_button_button_down"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
