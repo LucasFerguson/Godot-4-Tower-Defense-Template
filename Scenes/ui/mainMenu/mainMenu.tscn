@@ -65,6 +65,7 @@ layout_mode = 0
 offset_right = 640.0
 offset_bottom = 360.0
 stream = SubResource("VideoStreamTheora_eooxo")
+expand = true
 
 [connection signal="button_down" from="MenuButtons/VBoxContainer/startButton" to="." method="_on_start_button_button_down"]
 [connection signal="pressed" from="MenuButtons/VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
