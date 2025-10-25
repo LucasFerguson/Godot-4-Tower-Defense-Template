@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://daoavp61t0y3x" path="res://Scenes/ui/mainMenu/quit_button.gd" id="4_eooxo"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_eooxo"]
-file = "res://videos/RickRoll.ogv"
+file = "res://videos/IntroVideo.ogv"
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
