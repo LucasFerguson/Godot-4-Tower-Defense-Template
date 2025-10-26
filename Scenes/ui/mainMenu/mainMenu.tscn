@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://daoavp61t0y3x" path="res://Scenes/ui/mainMenu/quit_button.gd" id="4_eooxo"]
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_eooxo"]
-file = "res://videos/IntroVideo.ogv"
+file = "res://videos/Scene1.ogv"
 
 [sub_resource type="VideoStreamTheora" id="VideoStreamTheora_a18o6"]
 file = "res://videos/Scene2.ogv"
