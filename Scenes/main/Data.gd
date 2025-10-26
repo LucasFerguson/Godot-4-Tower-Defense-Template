@@ -3,10 +3,10 @@ extends Node
 const turrets := {
 	"gatling": {
 		"stats": {
-			"damage": 10,
+			"damage": 15,
 			"attack_speed": 2.0,
-			"attack_range": 200.0,
-			"bulletSpeed": 200.0,
+			"attack_range": 300.0,
+			"bulletSpeed": 400.0,
 			"bulletPierce": 1,
 		},
 		"upgrades": {

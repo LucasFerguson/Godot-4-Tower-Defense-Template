@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dq06xii6mvngw"
-path="res://.godot/imported/dynamite.png-3bbcb539e7bf961ae6c997d8fd3c0bda.ctex"
+uid="uid://dkla2ahfi4srv"
+path="res://.godot/imported/Dynamite.png-dcc835f9d1f31420b3b6214a6068ffed.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/turrets/dynamite.png"
-dest_files=["res://.godot/imported/dynamite.png-3bbcb539e7bf961ae6c997d8fd3c0bda.ctex"]
+source_file="res://Assets/turrets/Dynamite.png"
+dest_files=["res://.godot/imported/Dynamite.png-dcc835f9d1f31420b3b6214a6068ffed.ctex"]
 
 [params]
 
