@@ -1,7 +1,12 @@
 # Foundation for Game Jam!
 
 We will be using this template to start out with our game!
+
+Created by:
 - Lucas
+- Fannie
+- Danish
+- Eli
 
 # Tower Defense Game Template in Godot
 
