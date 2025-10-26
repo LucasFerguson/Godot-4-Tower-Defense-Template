@@ -16,6 +16,7 @@ atlas = ExtResource("2_gonov")
 region = Rect2(250, 0, 125, 120)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jegv3"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -26,6 +27,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_yrjps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpxba")
 }],
 "loop": true,
 "name": &"default",
@@ -44,7 +48,7 @@ position = Vector2(0, -7)
 rotation = 1.5707964
 scale = Vector2(0.52642417, 0.52642417)
 sprite_frames = SubResource("SpriteFrames_jegv3")
-frame_progress = 0.79072917
+frame_progress = 0.49447134
 
 [node name="Area" type="Area2D" parent="."]
 
