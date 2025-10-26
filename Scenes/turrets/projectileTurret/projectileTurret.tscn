@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://edmi5jtva5y2"]
 
 [ext_resource type="Script" uid="uid://e3txk6rtrabc" path="res://Scenes/turrets/projectileTurret/projectileTurret.gd" id="1_7ca8v"]
-[ext_resource type="Texture2D" uid="uid://83kim8fm0f2s" path="res://Assets/turrets/technoturret.png" id="2_2x7ix"]
+[ext_resource type="Texture2D" uid="uid://j5mhuovln2vd" path="res://Assets/turrets/SquirrelAcornLauncher.png" id="2_147l2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aicnu"]
 radius = 22.8
@@ -13,9 +13,9 @@ radius = 230.11
 script = ExtResource("1_7ca8v")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = 2
-texture_filter = 1
-texture = ExtResource("2_2x7ix")
+position = Vector2(0, 1)
+scale = Vector2(0.56880736, 0.56880736)
+texture = ExtResource("2_147l2")
 
 [node name="CollisionArea" type="Area2D" parent="."]
 collision_layer = 2

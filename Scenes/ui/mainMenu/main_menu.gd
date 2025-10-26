@@ -77,3 +77,11 @@ func _on_video_stream_player_2_finished() -> void:
 		var msc := mscScene.instantiate()
 		mapSelectContainer = msc
 		add_child(msc)
+
+
+func _on_button_pressed() -> void:
+	if not mapSelectContainer:
+		var mscScene := preload("res://Scenes/ui/mainMenu/select_map_container.tscn")
+		var msc := mscScene.instantiate()
+		mapSelectContainer = msc
+		add_child(msc) # Replace with function body.
