@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://3ap3on04gj27"]
 
-[ext_resource type="Script" path="res://Scenes/ui/mapCompleted/mapCompleted.gd" id="1_r4qa7"]
+[ext_resource type="Script" uid="uid://bfamm7e6cd523" path="res://Scenes/ui/mapCompleted/mapCompleted.gd" id="1_r4qa7"]
 
 [node name="GameOverPanel" type="PanelContainer"]
 modulate = Color(1, 1, 1, 0)
@@ -26,7 +26,8 @@ theme_override_constants/separation = 10
 [node name="GameOverText" type="Label" parent="CenterPanel/VBoxContainer"]
 layout_mode = 2
 text = "Map Completed!
-"
+Thank you for playing!
+Created by Fannie, Danish, Lucas, and Eli"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="CenterPanel/VBoxContainer"]

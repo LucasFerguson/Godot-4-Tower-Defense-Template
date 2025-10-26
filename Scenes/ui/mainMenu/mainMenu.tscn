@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://duvsvsvu8biwm"]
 
 [ext_resource type="Script" uid="uid://bxc2ungqdsuhd" path="res://Scenes/ui/mainMenu/main_menu.gd" id="1_lnqmy"]
-[ext_resource type="Texture2D" uid="uid://didi8ffqykvkh" path="res://Assets/menu/bg.png" id="2_jl1fa"]
+[ext_resource type="Texture2D" uid="uid://da1u14k4sink5" path="res://Assets/menu/bg.png" id="2_jl1fa"]
 [ext_resource type="Script" uid="uid://dglob68oy08eo" path="res://Scenes/ui/mainMenu/start_button.gd" id="3_ir5vu"]
 [ext_resource type="Script" uid="uid://daoavp61t0y3x" path="res://Scenes/ui/mainMenu/quit_button.gd" id="4_eooxo"]
 
@@ -26,38 +26,39 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -6.999999
+offset_top = -8.999998
+offset_right = 4682.7305
+offset_bottom = 2627.9998
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_jl1fa")
 
-[node name="MenuButtons" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(200, 150)
+[node name="startButton" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -75.0
-offset_bottom = 75.0
-grow_horizontal = 0
-grow_vertical = 2
+anchors_preset = -1
+anchor_left = -0.15972222
+anchor_top = -0.16203703
+anchor_right = -0.105902776
+anchor_bottom = -0.26234567
+offset_left = 952.0
+offset_top = 249.0
+offset_right = 1152.0
+offset_bottom = 399.0
+size_flags_vertical = 3
+flat = true
+script = ExtResource("3_ir5vu")
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuButtons"]
-layout_mode = 2
-
-[node name="startButton" type="Button" parent="MenuButtons/VBoxContainer"]
-layout_mode = 2
+[node name="quitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 504.0
+offset_right = 412.0
+offset_bottom = 584.0
 size_flags_vertical = 3
-text = "Start Game"
-script = ExtResource("3_ir5vu")
-
-[node name="quitButton" type="Button" parent="MenuButtons/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Quit"
+flat = true
 script = ExtResource("4_eooxo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -65,8 +66,10 @@ position = Vector2(577, 322)
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
-offset_right = 640.0
-offset_bottom = 360.0
+offset_left = 98.0
+offset_top = 83.0
+offset_right = 738.0
+offset_bottom = 443.0
 stream = SubResource("VideoStreamTheora_eooxo")
 expand = true
 
@@ -87,15 +90,16 @@ offset_bottom = 558.0
 text = "Spray Bug!!!"
 
 [node name="Button" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 163.0
 offset_top = 29.0
 offset_right = 386.0
 offset_bottom = 130.0
 
-[connection signal="button_down" from="MenuButtons/VBoxContainer/startButton" to="." method="_on_start_button_button_down"]
-[connection signal="pressed" from="MenuButtons/VBoxContainer/startButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="MenuButtons/VBoxContainer/quitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="button_down" from="startButton" to="." method="_on_start_button_button_down"]
+[connection signal="pressed" from="startButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="quitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
 [connection signal="finished" from="VideoStreamPlayer2" to="." method="_on_video_stream_player_2_finished"]
 [connection signal="pressed" from="SprayBugButton" to="." method="_on_spray_bug_button_pressed"]
