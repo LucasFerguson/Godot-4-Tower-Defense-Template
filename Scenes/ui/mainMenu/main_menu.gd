@@ -1,14 +1,15 @@
 extends Control
 
-@onready var v1: VideoStreamPlayer = $VideoStreamPlayer
-@onready var v2: VideoStreamPlayer = $VideoStreamPlayer2
 @onready var spray_bug_button: Button = $SprayBugButton
 @onready var select_map_container: PanelContainer = $SelectMapContainer
+@onready var v1: VideoStreamPlayer = $VideoStreamPlayer
+@onready var v2: VideoStreamPlayer = $VideoStreamPlayer2
 
 
 var v1_holding_last := false
 
 func _on_start_button_button_down() -> void:
+	print("_on_start_button_button_down")
 	var v := v1
 	v.expand = true
 	v.anchor_left = 0.0
@@ -29,22 +30,14 @@ func _process(_dt: float) -> void:
 	if v1.visible and not v1.paused:
 		var length: float = v1.get_stream_length()
 		if length > 0.0 and v1.stream_position >= length - 0.05:
-			v1.paused = true
-			v1.stream_position = max(length - 0.001, 0.0)
-			v1_holding_last = true
+			pass
+			#v1.paused = true
+			#v1.stream_position = max(length - 0.001, 0.0)
+			#v1_holding_last = true
 
-func _unhandled_input(e: InputEvent) -> void:
-	if v1_holding_last and ((e is InputEventMouseButton and e.pressed) or e.is_action_pressed("ui_accept")):
-		_play_v2()
-
-func _on_video_stream_player_finished() -> void:
-	print("video 1 done _on_video_stream_player_finished")
-	var length: float = v1.get_stream_length()
-	v1.paused = true
-	if length > 0.0:
-		v1.stream_position = max(length - 0.001, 0.0)
-	v1_holding_last = true
-	spray_bug_button.visible = true
+#func _unhandled_input(e: InputEvent) -> void:
+	#if v1_holding_last and ((e is InputEventMouseButton and e.pressed) or e.is_action_pressed("ui_accept")):
+		#_play_v2()
 
 func _play_v2() -> void:
 	v1.visible = false
@@ -72,6 +65,7 @@ func _on_spray_bug_button_pressed() -> void:
 var mapSelectContainer : PanelContainer
 
 func _on_video_stream_player_2_finished() -> void:
+	print("_on_video_stream_player_2_finished")
 	if not mapSelectContainer:
 		var mscScene := preload("res://Scenes/ui/mainMenu/select_map_container.tscn")
 		var msc := mscScene.instantiate()
@@ -80,8 +74,19 @@ func _on_video_stream_player_2_finished() -> void:
 
 
 func _on_button_pressed() -> void:
+	
 	if not mapSelectContainer:
 		var mscScene := preload("res://Scenes/ui/mainMenu/select_map_container.tscn")
 		var msc := mscScene.instantiate()
 		mapSelectContainer = msc
 		add_child(msc) # Replace with function body.
+
+
+func _on_video_stream_player_finished() -> void:
+	print("video 1 done _on_video_stream_player_finished")
+	var length: float = v1.get_stream_length()
+	v1.paused = true
+	if length > 0.0:
+		v1.stream_position = max(length - 0.001, 0.0)
+	v1_holding_last = true
+	spray_bug_button.visible = true

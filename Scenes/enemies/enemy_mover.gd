@@ -3,7 +3,7 @@ extends PathFollow2D
 var enemy_type := "":
 	set(val):
 		enemy_type = val
-		$Sprite2D.texture = load(Data.enemies[val]["sprite"])
+		#$Sprite2D.texture = load(Data.enemies[val]["sprite"])
 		for stat in Data.enemies[val]["stats"].keys():
 			set(stat, Data.enemies[val]["stats"][stat])
 

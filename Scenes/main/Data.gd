@@ -117,7 +117,7 @@ const enemies := {
 			"goldYield": 10.0,
 			},
 		"difficulty": 1.0,
-		"sprite": "res://Assets/enemies/dino1.png",
+		"sprite": "res://Assets/enemies/TermiteAnimpng.png",
 	},
 	"blueDino": {
 		"stats": {
@@ -127,7 +127,7 @@ const enemies := {
 			"goldYield": 10.0,
 			},
 		"difficulty": 2.0,
-		"sprite": "res://Assets/enemies/dino2.png",
+		"sprite": "res://Assets/enemies/TermiteAnimpng.png",
 	},
 	"yellowDino": {
 		"stats": {
@@ -137,7 +137,7 @@ const enemies := {
 			"goldYield": 10.0,
 			},
 		"difficulty": 3.0,
-		"sprite": "res://Assets/enemies/dino3.png",
+		"sprite": "res://Assets/enemies/TermiteAnimpng.png",
 	},
 	"greenDino": {
 		"stats": {

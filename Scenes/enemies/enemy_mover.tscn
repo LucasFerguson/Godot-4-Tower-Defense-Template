@@ -1,29 +1,36 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb3v7e6vydle1"]
+[gd_scene load_steps=8 format=3 uid="uid://cb3v7e6vydle1"]
 
-[ext_resource type="Script" path="res://Scenes/enemies/enemy_mover.gd" id="1_e187i"]
-[ext_resource type="Texture2D" uid="uid://dhvmjhj28g7li" path="res://Assets/enemies/dino1.png" id="2_bpnqn"]
+[ext_resource type="Script" uid="uid://bfhb1j1l8tnw0" path="res://Scenes/enemies/enemy_mover.gd" id="1_e187i"]
+[ext_resource type="Texture2D" uid="uid://dwv8tu0wxeukn" path="res://Assets/enemies/TermiteAnimpng.png" id="2_gonov"]
 
-[sub_resource type="Animation" id="Animation_mhspp"]
-resource_name = "move"
-length = 0.6
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [4, 5, 6, 7, 8, 9]
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_gonov"]
+atlas = ExtResource("2_gonov")
+region = Rect2(0, 0, 125, 120)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_obqca"]
-_data = {
-"move": SubResource("Animation_mhspp")
-}
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpxba"]
+atlas = ExtResource("2_gonov")
+region = Rect2(125, 0, 125, 120)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrjps"]
+atlas = ExtResource("2_gonov")
+region = Rect2(250, 0, 125, 120)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jegv3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gonov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpxba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrjps")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7h0ns"]
 radius = 13.0
@@ -32,18 +39,12 @@ radius = 13.0
 loop = false
 script = ExtResource("1_e187i")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-scale = Vector2(2, 2)
-texture = ExtResource("2_bpnqn")
-hframes = 24
-frame = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_obqca")
-}
-autoplay = "move"
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+rotation = 1.5707964
+scale = Vector2(0.52642417, 0.52642417)
+sprite_frames = SubResource("SpriteFrames_jegv3")
+frame_progress = 0.79072917
 
 [node name="Area" type="Area2D" parent="."]
 
